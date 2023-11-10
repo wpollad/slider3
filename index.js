@@ -39,7 +39,7 @@ videos.forEach(video => {
         const id = video
             .getElementsByTagName('img')[0]
             .src
-            .replace("http://img.youtube.com/vi/", "")
+            .replace("https://img.youtube.com/vi/", "")
             .replace("/mqdefault.jpg", "")
         mainVideo.src = "https://www.youtube.com/embed/" + id;
         console.log(mainVideo)
