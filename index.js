@@ -42,6 +42,5 @@ videos.forEach(video => {
             .replace("https://img.youtube.com/vi/", "")
             .replace("/mqdefault.jpg", "")
         mainVideo.src = "https://www.youtube.com/embed/" + id;
-        console.log(mainVideo)
     })
 })
