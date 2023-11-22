@@ -114,6 +114,11 @@ body {
     margin-bottom: 0;
 }
 
+.video iframe {
+    pointer-events: none;
+    width: 320px;
+}
+
 .youtube-logo {
     position: absolute;
     left: 50%;

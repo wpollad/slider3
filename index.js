@@ -36,11 +36,7 @@ arrowIcons.forEach(icon => {
 
 videos.forEach(video => {
     video.addEventListener("click", () => {
-        const id = video
-            .getElementsByTagName('img')[0]
-            .src
-            .replace("https://img.youtube.com/vi/", "")
-            .replace("/mqdefault.jpg", "")
-        mainVideo.src = "https://www.youtube.com/embed/" + id;
+        const iframeVideo = video.querySelector("iframe");
+        if (mainVideo.src !== iframeVideo.src) mainVideo.src = iframeVideo.src;
     })
 })
