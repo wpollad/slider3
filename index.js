@@ -37,6 +37,18 @@ arrowIcons.forEach(icon => {
 videos.forEach(video => {
     video.addEventListener("click", () => {
         const iframeVideo = video.querySelector("iframe");
-        if (mainVideo.src !== iframeVideo.src) mainVideo.src = iframeVideo.src;
+        const mainVideoSrc = mainVideo.src;
+        const mainView = document.querySelector(".main-video .views span");
+        const videoViews = video.querySelector(".views span");
+        console.log(videoViews, mainView);
+        if (mainVideo.src !== iframeVideo.src) {
+            const iframeVideoSrc = iframeVideo.src;
+            mainVideo.src = iframeVideoSrc;
+            iframeVideo.src = mainVideoSrc;
+
+            const tmp = mainView.textContent;
+            mainView.textContent = videoViews.textContent;
+            videoViews.textContent = tmp;
+        }
     })
 })
